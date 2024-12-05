@@ -20,7 +20,7 @@ const refreshAccessToken = async () => {
 
     const newAccessToken = response.data.accessToken;
     localStorage.setItem('accessToken', newAccessToken); // 새로운 엑세스 토큰 저장
-
+    console.log('토큰 발급');
     return newAccessToken;
   } catch (error) {
     console.error(
