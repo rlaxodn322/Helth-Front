@@ -25,3 +25,25 @@ export const createPost = async (postData: {
   const response = await apiClient.post('/post', postData); // 토큰 포함 자동 처리
   return response.data;
 };
+// 게시글 삭제
+export const deletePost = async (postId: number) => {
+  const response = await apiClient.delete(`/post/${postId}`); // 게시글 삭제
+  return response.data;
+};
+export const toggleLike = async (postId: number) => {
+  try {
+    const response = await apiClient.post(`/post/${postId}/like`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Error toggling like');
+  }
+};
+
+export const getPostLikes = async (postId: string) => {
+  try {
+    const response = await apiClient.get(`/post/${postId}/like`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Error fetching likes count');
+  }
+};

@@ -11,6 +11,13 @@ const PostsPage = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+      // 로그인되지 않으면 로그인 페이지로 리다이렉션
+      router.push('/');
+    }
+  }, [router]);
+  useEffect(() => {
     const getPosts = async () => {
       try {
         const data = await fetchPosts();

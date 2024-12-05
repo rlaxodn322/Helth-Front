@@ -1,7 +1,7 @@
 // pages/posts/new.tsx
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPost } from '../../apis/postService';
 import { useRouter } from 'next/navigation';
 import React from 'react';
@@ -10,6 +10,13 @@ const NewPostPage = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const router = useRouter();
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+      // 로그인되지 않으면 로그인 페이지로 리다이렉션
+      router.push('/');
+    }
+  }, [router]);
 
   const handleSubmit = async () => {
     try {

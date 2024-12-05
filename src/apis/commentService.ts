@@ -20,6 +20,11 @@ export const createComment = async (
   const response = await apiClient.post(`/comment`, commentData); // 토큰 포함 자동 처리
   return response.data;
 };
+// 댓글 삭제
+export const deleteComment = async (commentId: number) => {
+  const response = await apiClient.delete(`/comment/${commentId}`); // 댓글 삭제
+  return response.data;
+};
 // export const createComment = async (
 //   postId: number,
 //   commentData: { content: string }
