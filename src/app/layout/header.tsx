@@ -3,6 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import apiClient from '../utils/apiClient';
+import { useRouter } from 'next/navigation';
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -64,35 +66,27 @@ const NavLink = styled.div`
     margin: 5px 10px;
   }
 `;
+const App: React.FC = () => {
+  const router = useRouter();
 
-const App: React.FC = () => (
-  <HeaderContainer>
-    <NavContainer>
-      {/* <LogoContainer>
-        <Link href="../">
-          <img src="/icons/man.svg" alt="Logo" />
-        </Link>
-      </LogoContainer>
-      <NavLinks>
-        <Link href="/pet/01">
-          <NavLink>유기견</NavLink>
-        </Link>
-        <Link href="/weather/01">
-          <NavLink>날씨</NavLink>
-        </Link>
+  const handleLogout = () => {
+    // 로컬 스토리지에서 토큰 삭제
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
 
-        <Link href="/toilet/01">
-          <NavLink>똥싸개</NavLink>
-        </Link>
-        <Link href="/adst/01">
-          <NavLink>명소</NavLink>
-        </Link>
-        <Link href="/grid/01">
-          <NavLink>헬스</NavLink>
-        </Link>
-      </NavLinks> */}
-    </NavContainer>
-  </HeaderContainer>
-);
+    // 로그인 페이지로 리다이렉션
+    router.push('/');
+  };
+
+  return (
+    <HeaderContainer>
+      <NavContainer>
+        <div style={{ marginLeft: 'auto' }}>
+          <button onClick={handleLogout}>로그아웃</button>
+        </div>
+      </NavContainer>
+    </HeaderContainer>
+  );
+};
 
 export default App;

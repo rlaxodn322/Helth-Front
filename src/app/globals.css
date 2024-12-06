@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
@@ -21,8 +19,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   margin: 0 auto;
-  max-width: 1200px; 
-  width: 90%; 
+  max-width: 1200px;
+  width: 90%;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -37,11 +35,11 @@ body {
 }
 @media (max-width: 480px) {
   body {
-    width: 100%; 
+    width: 100%;
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }

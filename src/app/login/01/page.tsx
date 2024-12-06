@@ -75,12 +75,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen  p-4 sm:p-6 md:p-10 bg-gray-50">
+    <div className="min-h-screen  p-4 sm:p-6 md:p-10 ">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg"
       >
-        <h1 className="text-2xl font-bold mb-4 text-center sm:text-3xl">로그인</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center sm:text-3xl">
+          로그인
+        </h1>
         {errorMessage && <p className="text-red-500 mb-2">{errorMessage}</p>}
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium">
@@ -133,7 +135,9 @@ const LoginPage = () => {
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg">
             <h2 className="text-xl font-bold mb-4">회원가입</h2>
-            {errorMessage && <p className="text-red-500 mb-2">{errorMessage}</p>}
+            {errorMessage && (
+              <p className="text-red-500 mb-2">{errorMessage}</p>
+            )}
             <form onSubmit={handleSignUpSubmit(onSignUpSubmit)}>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-sm font-medium">
@@ -142,11 +146,15 @@ const LoginPage = () => {
                 <input
                   id="email"
                   type="email"
-                  {...signUpRegister('email', { required: '이메일을 입력해주세요.' })}
+                  {...signUpRegister('email', {
+                    required: '이메일을 입력해주세요.',
+                  })}
                   className="border p-2 w-full rounded"
                 />
                 {signUpErrors.email && (
-                  <p className="text-red-500 text-sm">{signUpErrors.email.message}</p>
+                  <p className="text-red-500 text-sm">
+                    {signUpErrors.email.message}
+                  </p>
                 )}
               </div>
               <div className="mb-4">
@@ -162,11 +170,16 @@ const LoginPage = () => {
                   className="border p-2 w-full rounded"
                 />
                 {signUpErrors.password && (
-                  <p className="text-red-500 text-sm">{signUpErrors.password.message}</p>
+                  <p className="text-red-500 text-sm">
+                    {signUpErrors.password.message}
+                  </p>
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="confirmPassword" className="block text-sm font-medium">
+                <label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-medium"
+                >
                   비밀번호 확인
                 </label>
                 <input
@@ -178,7 +191,9 @@ const LoginPage = () => {
                   className="border p-2 w-full rounded"
                 />
                 {signUpErrors.confirmPassword && (
-                  <p className="text-red-500 text-sm">{signUpErrors.confirmPassword.message}</p>
+                  <p className="text-red-500 text-sm">
+                    {signUpErrors.confirmPassword.message}
+                  </p>
                 )}
               </div>
               <button
