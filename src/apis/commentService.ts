@@ -6,6 +6,7 @@ axios.defaults.baseURL = backUrl;
 axios.defaults.withCredentials = true;
 export const fetchCommentsByPost = async (postId: number) => {
   const response = await apiClient.get(`/comment/post/${postId}`); // 특정 게시글의 댓글
+  console.log(response);
   return response.data;
 };
 // export const fetchCommentsByPost = async (postId: number) => {

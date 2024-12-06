@@ -15,7 +15,7 @@ const HeaderContainer = styled.div`
 const NavContainer = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 1250px;
+  /* max-width: 1250px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +81,7 @@ const App: React.FC = () => {
   return (
     <HeaderContainer>
       <NavContainer>
-        <div style={{ marginLeft: 'auto' }}>
+        <div style={{ marginLeft: 'auto', marginRight: '20px' }}>
           <button onClick={handleLogout}>로그아웃</button>
         </div>
       </NavContainer>

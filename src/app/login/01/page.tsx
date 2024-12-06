@@ -75,31 +75,37 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen  p-4 sm:p-6 md:p-10 ">
+    <div className="flex items-center justify-center min-h-screen bg-100 p-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg"
+        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
       >
-        <h1 className="text-2xl font-bold mb-4 text-center sm:text-3xl">
+        <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">
           로그인
         </h1>
-        {errorMessage && <p className="text-red-500 mb-2">{errorMessage}</p>}
+        {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
             이메일
           </label>
           <input
             id="email"
             type="email"
             {...register('email', { required: '이메일을 입력해주세요.' })}
-            className="border p-2 w-full rounded"
+            className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-700"
+          >
             비밀번호
           </label>
           <input
@@ -108,10 +114,12 @@ const LoginPage = () => {
             {...register('password', {
               required: '비밀번호를 입력해주세요.',
             })}
-            className="border p-2 w-full rounded"
+            className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
+            <p className="text-red-500 text-sm mt-1">
+              {errors.password.message}
+            </p>
           )}
         </div>
         <button
@@ -133,14 +141,19 @@ const LoginPage = () => {
       {/* 회원가입 모달 */}
       {showSignUpModal && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg">
-            <h2 className="text-xl font-bold mb-4">회원가입</h2>
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4 text-center text-gray-800">
+              회원가입
+            </h2>
             {errorMessage && (
-              <p className="text-red-500 mb-2">{errorMessage}</p>
+              <p className="text-red-500 mb-4">{errorMessage}</p>
             )}
             <form onSubmit={handleSignUpSubmit(onSignUpSubmit)}>
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   이메일
                 </label>
                 <input
@@ -149,16 +162,19 @@ const LoginPage = () => {
                   {...signUpRegister('email', {
                     required: '이메일을 입력해주세요.',
                   })}
-                  className="border p-2 w-full rounded"
+                  className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {signUpErrors.email && (
-                  <p className="text-red-500 text-sm">
+                  <p className="text-red-500 text-sm mt-1">
                     {signUpErrors.email.message}
                   </p>
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="password" className="block text-sm font-medium">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   비밀번호
                 </label>
                 <input
@@ -167,10 +183,10 @@ const LoginPage = () => {
                   {...signUpRegister('password', {
                     required: '비밀번호를 입력해주세요.',
                   })}
-                  className="border p-2 w-full rounded"
+                  className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {signUpErrors.password && (
-                  <p className="text-red-500 text-sm">
+                  <p className="text-red-500 text-sm mt-1">
                     {signUpErrors.password.message}
                   </p>
                 )}
@@ -178,7 +194,7 @@ const LoginPage = () => {
               <div className="mb-4">
                 <label
                   htmlFor="confirmPassword"
-                  className="block text-sm font-medium"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   비밀번호 확인
                 </label>
@@ -188,10 +204,10 @@ const LoginPage = () => {
                   {...signUpRegister('confirmPassword', {
                     required: '비밀번호를 확인해주세요.',
                   })}
-                  className="border p-2 w-full rounded"
+                  className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {signUpErrors.confirmPassword && (
-                  <p className="text-red-500 text-sm">
+                  <p className="text-red-500 text-sm mt-1">
                     {signUpErrors.confirmPassword.message}
                   </p>
                 )}
