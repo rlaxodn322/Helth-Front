@@ -8,7 +8,7 @@ axios.defaults.withCredentials = true;
 
 export const fetchPosts = async () => {
   const response = await axios.get('/post'); // 게시글 목록
-  console.log(response);
+  //console.log(response);
   return response.data;
 };
 
@@ -24,7 +24,7 @@ export const createPost = async (postData: {
   content: string;
 }) => {
   const response = await apiClient.post('/post', postData); // 토큰 포함 자동 처리
-  console.log(response);
+  //console.log(response);
   return response.data;
 };
 
@@ -36,7 +36,7 @@ export const updatePost = async (
   postId: number
 ) => {
   const response = await apiClient.patch(`/post/${postId}`, postData);
-  console.log(response);
+  //console.log(response);
   return response.data;
 };
 
@@ -44,7 +44,7 @@ export const updatePost = async (
 export const deletePost = async (postId: number) => {
   const response = await apiClient.delete(`/post/${postId}`); // 게시글 삭제
   return response.data;
-  console.log(response);
+
 };
 export const toggleLike = async (postId: number) => {
   try {
