@@ -52,6 +52,8 @@ const DashboardPage = () => {
         <Link href="../../new">글쓰기</Link>
         <br></br>
         <Link href="../../posts">글보기</Link>
+        <br></br>
+        <Link href="../../product">상품등록하기</Link>
       </div>
     </div>
   );
