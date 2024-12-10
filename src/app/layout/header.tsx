@@ -19,6 +19,7 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   /* 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -66,6 +67,7 @@ const NavLink = styled.div`
     margin: 5px 10px;
   }
 `;
+
 const App: React.FC = () => {
   const router = useRouter();
 
@@ -77,13 +79,18 @@ const App: React.FC = () => {
     // 로그인 페이지로 리다이렉션
     router.push('/');
   };
-
+  function back() {
+    router.push('/dashboard');
+  }
   return (
     <HeaderContainer>
       <NavContainer>
-        <div style={{ marginLeft: 'auto', marginRight: '20px' }}>
-          <button onClick={handleLogout}>로그아웃</button>
-        </div>
+        <button style={{ padding: '20px' }} onClick={back}>
+          뒤로가기
+        </button>
+        <button style={{ padding: '20px' }} onClick={handleLogout}>
+          로그아웃
+        </button>
       </NavContainer>
     </HeaderContainer>
   );

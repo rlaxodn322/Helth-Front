@@ -51,9 +51,11 @@ const DashboardPage = () => {
         </p>
         <Link href="../../new">글쓰기</Link>
         <br></br>
-        <Link href="../../posts">글보기</Link>
+        <Link href="../../posts">헬스커뮤니티</Link>
         <br></br>
-        <Link href="../../product">상품등록하기</Link>
+        <Link href="../../product">헬스중고나라</Link>
+        <br></br>
+        <Link href="../../top-set">탑세트훈련</Link>
       </div>
     </div>
   );

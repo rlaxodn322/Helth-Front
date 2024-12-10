@@ -146,12 +146,10 @@ const PostDetailPage = ({ params }: { params: { id: string } }) => {
   if (!post) {
     return <p>Loading...</p>;
   }
-  function back() {
-    router.push('/posts');
-  }
+
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
-      <button onClick={back}>뒤로가기</button>
+     
       <div className="bg-white p-6 rounded-lg shadow-md">
         {isLoggedIn && (
           <div className="flex justify-end mb-4">

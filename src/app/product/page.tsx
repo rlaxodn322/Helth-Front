@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { getAllProducts } from '../../apis/productService';
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
+  const router = useRouter();
   const fetchProducts = async () => {
     try {
       const response = await getAllProducts();
@@ -21,13 +21,14 @@ const ProductList = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+      {' '}
+      
       <Link href="../../product/list" style={{ float: 'right' }}>
         Add Product
       </Link>
       <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
         Product List
       </h1>
-
       <div className="mt-4 space-y-4">
         {products.length > 0 ? (
           products.map((product) => (

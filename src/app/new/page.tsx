@@ -26,12 +26,10 @@ const NewPostPage = () => {
       console.error('Error creating post:', error);
     }
   };
-  function back() {
-    router.push('/dashboard');
-  }
+
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
-      <button onClick={back}>뒤로가기</button>
+  
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg mx-auto">
         <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">
           새 게시글 작성

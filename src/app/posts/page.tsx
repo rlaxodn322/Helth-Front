@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { fetchPosts } from '../../apis/postService';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import Link from 'next/link';
 
 const PostsPage = () => {
   const [posts, setPosts] = useState<any[]>([]);
@@ -29,12 +30,14 @@ const PostsPage = () => {
 
     getPosts();
   }, []);
-  function back() {
-    router.push('/dashboard');
-  }
+
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
-      <button onClick={back}>뒤로가기</button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+   
+        <Link href="../../new">글쓰기</Link>
+      </div>
+
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4">
           게시글 목록
