@@ -8,7 +8,7 @@ axios.defaults.withCredentials = true;
 
 export const fetchPosts = async () => {
   const response = await axios.get('/post'); // 게시글 목록
-  //console.log(response);
+  console.log(response);
   return response.data;
 };
 

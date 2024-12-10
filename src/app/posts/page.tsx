@@ -50,7 +50,10 @@ const PostsPage = () => {
               className="p-4 border-b cursor-pointer hover:bg-gray-100 transition"
               onClick={() => router.push(`/posts/${post.id}`)}
             >
-              <h2 className="text-lg font-semibold">{post.title}</h2>
+              <h2 className="text-lg font-semibold">
+                email: {post.user.email}
+                <br></br> {post.title}
+              </h2>
               <p className="text-sm text-gray-500">{post.content}</p>
             </li>
           ))}
