@@ -31,7 +31,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-xl mt-12">
+    <div className="max-w-5xl mx-auto p-8 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-xl mt-12">
       <Link
         href="../../product/list"
         className="text-white bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-full text-sm font-semibold "
@@ -40,7 +40,7 @@ const ProductList = () => {
       </Link>
 
       <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900">
-        헬스 장비 중고나라
+        헬스 제품 리뷰
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -52,10 +52,14 @@ const ProductList = () => {
             >
               <div className="relative">
                 <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">
-                  {product.title}
+                  품목: {product.title}
                 </h3>
-                <p className="text-sm text-gray-500">{product.description}</p>
-                <p className="mt-4 text-lg font-medium text-gray-900">{`₩${product.price}`}</p>
+                <p className="text-sm text-gray-500">
+                  설명: {product.description}
+                </p>
+                <p className="mt-4 text-lg font-medium text-gray-900">{`ID: ${product.user.email}`}</p>
+                <p className="mt-4 text-lg font-medium text-gray-900">{`비용 ₩${product.price}`}</p>
+
                 {product.images && product.images.length > 0 && (
                   <div className="mt-4 grid grid-cols-3 gap-2">
                     {product.images.map((image, index) => (

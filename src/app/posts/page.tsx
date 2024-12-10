@@ -32,7 +32,7 @@ const PostsPage = () => {
   }, []);
 
   return (
-    <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
+    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-xl mt-12">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Link href="../../new">글쓰기</Link>
       </div>

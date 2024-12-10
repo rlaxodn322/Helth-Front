@@ -38,8 +38,10 @@ const TopSetListPage = () => {
   if (loading) return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold text-center mb-6">Top Set Trainings</h1>
+    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-xl mt-12">
+      <h1 className="mt-10 max-w-4xl mx-auto text-2xl font-bold text-center mb-6">
+        Top Set Trainings
+      </h1>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {' '}
         탑세트 훈련은 특정 운동에서 개인의 최고 중량(또는 목표 중량)을 기반으로
@@ -56,7 +58,7 @@ const TopSetListPage = () => {
       <div className="flex justify-center mb-6">
         <button
           onClick={() => router.push('/top-set/new')}
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
         >
           Add New Record
         </button>
