@@ -29,10 +29,10 @@ const NewPostPage = () => {
 
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
-  
       <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg mx-auto">
         <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">
-          새 게시글 작성
+          헬스 커뮤니티 <br></br>
+          <br></br>게시글 작성
         </h1>
         <input
           type="text"

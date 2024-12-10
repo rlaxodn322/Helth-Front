@@ -39,9 +39,8 @@ const TopSetListPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-  
       <h1 className="text-2xl font-bold text-center mb-6">Top Set Trainings</h1>
-      <div style={{ maxWidth: '350px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {' '}
         탑세트 훈련은 특정 운동에서 개인의 최고 중량(또는 목표 중량)을 기반으로
         고강도 세트를 수행하고, 이를 통해 점진적 과부하를 달성하는 훈련

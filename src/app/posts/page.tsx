@@ -34,13 +34,13 @@ const PostsPage = () => {
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-   
         <Link href="../../new">글쓰기</Link>
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4">
-          게시글 목록
+          헬스 커뮤니티<br></br>
+          <br></br> 게시글 목록
         </h1>
 
         <ul>
