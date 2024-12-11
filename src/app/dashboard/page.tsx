@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { getNews } from '../../apis/newsService';
 import Chatbot from '../../components/Chatbot';
+import HealthInfo from '../../components/HealthInfo';
 
 const DashboardPage = () => {
   const [user, setUser] = useState<any>(null);
@@ -74,7 +75,7 @@ const DashboardPage = () => {
           안녕하세요,{' '}
           <span className="font-semibold text-blue-500">{user.email}</span>님!
         </p>
-
+        <HealthInfo></HealthInfo>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <Link
             href="../../new"
