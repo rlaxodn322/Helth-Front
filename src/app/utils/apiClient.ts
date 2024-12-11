@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://52.79.183.89', // NestJS API의 URL
+  baseURL: 'http://localhost:3001', // NestJS API의 URL
   headers: {
     'Content-Type': 'application/json',
   },
