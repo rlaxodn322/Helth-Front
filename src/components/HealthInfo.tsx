@@ -24,32 +24,22 @@ const HealthInfo = () => {
   // 데이터 토글
   const toggleDataVisibility = () => {
     setIsDataVisible(!isDataVisible); // 토글 상태 변경
+    fetchData();
   };
 
   return (
     <div className="container mx-auto p-4">
-      {/* 버튼 클릭 시 fetchData 호출 */}
-      <div className="mb-4 flex justify-center">
-        <button
-          onClick={fetchData} // 버튼 클릭 시 fetchData 실행
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        >
-          고혈압 정보
-        </button>
-      </div>
-
-      {/* 로딩 상태 표시 */}
-      {loading && <p className="text-center">로딩 중...</p>}
-
       {/* 데이터 토글 버튼 */}
       <div className="mb-4 flex justify-center">
         <button
           onClick={toggleDataVisibility} // 데이터 표시 토글
           className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
         >
-          {isDataVisible ? '데이터 숨기기' : '데이터 보기'}
+          {isDataVisible ? '데이터 숨기기' : '고혈압 정보 '}
         </button>
       </div>
+      {/* 로딩 상태 표시 */}
+      {loading && <p className="text-center">로딩 중...</p>}
 
       {/* 데이터가 있을 경우 리스트 표시 */}
       {isDataVisible && hypertensionData.length > 0 && (
@@ -57,7 +47,9 @@ const HealthInfo = () => {
           <h3 className="text-2xl font-semibold mb-3">고혈압에 좋은 음식</h3>
           <ul className="list-disc pl-6 space-y-2">
             {hypertensionData.map((item, index) => (
-              <li key={index} className="text-lg text-gray-700">{item}</li>
+              <li key={index} className="text-lg text-gray-700">
+                {item}
+              </li>
             ))}
           </ul>
         </div>

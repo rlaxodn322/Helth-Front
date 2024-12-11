@@ -75,7 +75,7 @@ const DashboardPage = () => {
           안녕하세요,{' '}
           <span className="font-semibold text-blue-500">{user.email}</span>님!
         </p>
-        <HealthInfo></HealthInfo>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <Link
             href="../../new"
@@ -100,6 +100,12 @@ const DashboardPage = () => {
             className="block text-center bg-purple-500 text-white font-semibold py-3 rounded-lg shadow hover:bg-purple-600 transition duration-300"
           >
             탑세트훈련
+          </Link>
+          <Link
+            href="../../diet-management"
+            className="block text-center bg-red-500 text-white font-semibold py-3 rounded-lg shadow hover:bg-red-600 transition duration-300"
+          >
+            질병 식단관리
           </Link>
         </div>
       </div>
